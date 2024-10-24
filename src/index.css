@@ -58,7 +58,7 @@
 
 .rainbow-text {
   font-family: 'Comic Sans MS';
-  animation: rainbow 1s linear infinite;
+  animation: rainbow 0.7s linear infinite;
 }
 
 body {
