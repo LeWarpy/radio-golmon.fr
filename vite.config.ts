@@ -11,12 +11,6 @@ export default defineConfig({
       injectRegister: 'inline',
       workbox: {
         globPatterns: ['**/*.{js,css,html,png,svg}'],
-        globIgnores: [
-          'node_modules/**/*',
-          'sw.js',
-          'workbox-*.js',
-          'workbox-*.js.map',
-        ],
         skipWaiting: true,
         clientsClaim: true,
         //cleanupOutdatedCaches: false,
