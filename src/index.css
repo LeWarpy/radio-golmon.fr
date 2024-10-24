@@ -1,0 +1,75 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rainbow {
+  0% { color: #ff0000; }
+  14% { color: #ff7f00; }
+  28% { color: #ffff00; }
+  42% { color: #00ff00; }
+  57% { color: #0000ff; }
+  71% { color: #8b00ff; }
+  85% { color: #ff00ff; }
+  100% { color: #ff0000; }
+}
+
+.rays-background {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(255, 255, 255, 0.1) 0deg,
+      rgba(255, 255, 255, 0.1) 10deg,
+      rgba(255, 255, 255, 0) 10deg,
+      rgba(255, 255, 255, 0) 20deg
+    );
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 0%,
+    black 50%,
+    transparent 70%
+  );
+  animation: rotate 60s linear infinite;
+}
+
+.white-light-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.3) 20%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  pointer-events: none;
+}
+
+.rainbow-text {
+  font-family: 'Comic Sans MS';
+  animation: rainbow 1s linear infinite;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+.bg-purple-custom {
+  background-color: #9370DB;
+}
