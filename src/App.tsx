@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
 import packageJson from '../package.json';
 
 import { InstallPrompt } from './components/InstallPrompt';
@@ -26,7 +26,6 @@ function App() {
 		   title="Player"
 		   className="w-full h-full"
 		   allow="autoplay"
-		   frameBorder="0"
 		></iframe>
         </div>
         <a
@@ -41,7 +40,7 @@ function App() {
         </a>
       </div>
       <footer className="absolute bottom-4 text-sm text-gray-200">
-	      <b href="#" className="mr-4">v{packageJson.version}</b>
+	      <b className="mr-4">v{packageJson.version}</b>
         <button 
           onClick={() => setIsLegalModalOpen(true)} 
           className="hover:underline mr-4"
