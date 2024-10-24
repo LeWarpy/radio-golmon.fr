@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 export function useInstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [isInstallable, setIsInstallable] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
     const handler = (e: Event) => {
@@ -28,5 +29,14 @@ export function useInstallPrompt() {
     }
   };
 
-  return { isInstallable, handleInstall };
+  const handleDismiss = () => {
+    setIsDismissed(true);
+    setIsInstallable(false);
+  };
+
+  return { 
+    isInstallable: isInstallable && !isDismissed, 
+    handleInstall,
+    handleDismiss
+  };
 }

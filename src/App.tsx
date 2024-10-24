@@ -7,7 +7,7 @@ import { useInstallPrompt } from './hooks/useInstallPrompt';
 
 function App() {
   const [isLegalModalOpen, setIsLegalModalOpen] = useState(false);
-  const { isInstallable, handleInstall } = useInstallPrompt();
+  const { isInstallable, handleInstall, handleDismiss } = useInstallPrompt();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-purple-custom">
@@ -54,7 +54,12 @@ function App() {
         onClose={() => setIsLegalModalOpen(false)} 
       />
 
-      {isInstallable && <InstallPrompt onInstall={handleInstall} />}
+      {isInstallable && (
+        <InstallPrompt
+          onInstall={handleInstall}
+          onClose={handleDismiss}
+        />
+      )}
     </div>
   );
 }
