@@ -35,7 +35,7 @@ function App() {
           className="inline-flex items-center"
         >
 	   <img
-	      src="https://discord.com/api/guilds/1288195550193389598/widget.png?style=banner3"
+	      src="/widget_discord.png"
 	   />	   
         </a>
       </div>
