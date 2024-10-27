@@ -5,9 +5,21 @@ import { InstallPrompt } from './components/InstallPrompt';
 import { LegalModal } from './components/LegalModal';
 import { useInstallPrompt } from './hooks/useInstallPrompt';
 
+import { useRegisterSW } from 'virtual:pwa-register/react'
+
+const intervalMS = 60 * 60 * 1000
+
 function App() {
   const [isLegalModalOpen, setIsLegalModalOpen] = useState(false);
   const { isInstallable, handleInstall, handleDismiss } = useInstallPrompt();
+
+  useRegisterSW({
+    onRegistered(r) {
+      r && setInterval(() => {
+        r.update()
+      }, intervalMS)
+    }
+  })
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-purple-custom">
