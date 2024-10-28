@@ -84,3 +84,13 @@ body {
 .bg-purple-custom {
   background-color: #9370DB;
 }
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: block;
+  margin-right: 10px;
+  padding: 10px;
+}
